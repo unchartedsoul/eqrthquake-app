@@ -1,64 +1,63 @@
 package com.example.quakereport;
 
-
-
-
 /**
- * An{@link EarthquakeActivity}object creating information about an object.
+ * An {@link Earthquake} object contains information related to a single earthquake.
  */
-
-
 public class Earthquake {
 
-    /**
-     * Magnitude of the earthquake
-     */
-    private String mMagnitude;
+    /** Magnitude of the earthquake */
+    private double mMagnitude;
+
+    /** Location of the earthquake */
+    private String mLocation;
+
+    /** Time of the earthquake */
+    private long mTimeInMilliseconds;
+
+    /** Website URL of the earthquake */
+    private String mUrl;
 
     /**
-     * location of the earthquake
-     */
-    private String mLocatoin;
-
-    /**
-     * Date of the earthquake
-     */
-    private String mDate;
-
-    /**
-     * Construc a new {@link EarthquakeActivity} object.
+     * Constructs a new {@link Earthquake} object.
      *
-     * @param magnitude is the magnitude(size) of the earthquake.
-     * @param location id the location of the earthquake.
-     * @param date is the date and time when the earthqauke happened.
+     * @param magnitude is the magnitude (size) of the earthquake
+     * @param location is the location where the earthquake happened
+     * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
+     *                           earthquake happened
+     * @param url is the website URL to find more details about the earthquake
      */
-
-    public Earthquake(String magnitude, String location , String date){
-        magnitude = magnitude;
-        mLocatoin = location;
-        mDate = date;
+    public Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
+        mMagnitude = magnitude;
+        mLocation = location;
+        mTimeInMilliseconds = timeInMilliseconds;
+        mUrl = url;
     }
 
-
     /**
-     * @return the magnitude of the earthquake.
+     * Returns the magnitude of the earthquake.
      */
-    public String getMagnitude(){
+    public double getMagnitude() {
         return mMagnitude;
     }
 
     /**
-     * @return the location of the earthquake.
+     * Returns the location of the earthquake.
      */
-    public String getLocation(){
-        return mLocatoin;
+    public String getLocation() {
+        return mLocation;
     }
 
     /**
-     * @return the date of the earthquake.
+     * Returns the time of the earthquake.
      */
-    public String getDate(){
-        return mDate;
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 
+    /**
+     * Returns the website URL to find more information about the earthquake.
+     */
+    public String getUrl() {
+        return mUrl;
+    }
 }
